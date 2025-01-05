@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .login-container:hover {
+            transform: translateY(-10px);
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="tel"] {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6c5ce7, #341f97);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s ease;
+        }
+        .login-container button:hover {
+            background: linear-gradient(135deg, #341f97, #6c5ce7);
+        }
+        .login-container .info {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>تسجيل الدخول</h1>
+    <form action="#" method="post">
+        <input type="text" name="fullName" placeholder="الاسم الرباعي" required>
+        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+        <div class="info">
+            السعر: 6 دولار تشمل الضريبة<br>
+            الدفع بالدولار الأمريكي فقط<br>
+            <input type="checkbox" name="agree" required> لقد قرأت الشروط والأحكام وأوافق
+        </div>
+        <button type="submit" onclick="sendWhatsAppMessage()">موافقة</button>
+    </form>
+</div>
+
+<script>
+    function sendWhatsAppMessage() {
+        const fullName = document.querySelector('input[name="fullName"]').value;
+        const phone = document.querySelector('input[name="phone"]').value;
+        const message = `HELLO SIR I WANT TO Make a Request from your Store. I have read all the terms and conditions. (roblox rewards redemption code)\n\nمرحبا، اريد طلب من متجرك. كود استبدال جوائز للعبة روبلوكس. اسمي: ${fullName}، رقم الهاتف: ${phone}`;
+        const whatsappLink = `https://wa.me/6285220691207?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
+    }
+</script>
+
+</body>
+</html>
